@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% rooms.each do |room| %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% if room.image.present? %>
+              <%= image_tag(item.image , alt: room.description) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: room.description) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= room.description %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<% content_for :ogp do %>
+  <meta name="title" content="<%= @room.description %> - Lovelivehome" />
+  <meta name="description" content="<%= @room.description %>にの情報です。" />
+<% end %>
+
+<div class="container">
+  <div class="container-inner inner-sm clearfix">
+    <div class="item-single-main">
+      <div class="image">
+        <div class="img-wrap">
+          <% if @room.image != nil %>
+            <%= image_tag(@room.image , alt: @room.description) %>
+          <% else %>
+            <%= image_tag('no-image.png' , alt: @room.description) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="title">
+        <%= @room.description %>
+      </div>
+    </div>
+
+    <div class="item-single-side">
+      <div class="side-box">
+        <h4 class="side-box-title">詳細説明</h4>
+        <div class="side-box-body">
+          <% @room.detail01 %>
+          <% @room.detail02 %>
+          <% @room.detail03 %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
