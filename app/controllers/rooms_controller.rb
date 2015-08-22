@@ -6,16 +6,19 @@ class RoomsController < ApplicationController
   end
 
   def new
+    @room = current_user.rooms.build if logged_in?
   end
   
   def create
-  	@room = current_user.rooms.build(room_params)
-  	if @room.save
-  		flash[:success] = "Room creates!"
-  		redirect_to @user
-  	else
-  		render 'welcom/index'
-  	end
+    @room = current_user.rooms.build(room_params)
+    if @room.save
+      flash[:success] = "Room creates!"
+      @user = current_user
+      @rooms = current_user.rooms
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -28,7 +31,8 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-  	params.require(:room).permit(:image, :type, :description, :detail01, :detail02, :detail03)
+    params.require(:room).permit(:image, :place, :detail01)
+    #params.require(:room).permit(:image, :type, :description, :detail01, :detail02, :detail03)
   end
 
 end

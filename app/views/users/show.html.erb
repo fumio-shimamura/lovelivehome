@@ -1,4 +1,10 @@
+<% content_for :head do %>
+  <title><%= @user.name %> - Lovelivehome</title>
+  <meta name="title" content="<%= @user.name %> - Lovelivehome" />
+  <meta name="description" content="<%= @user.name %>の家" />
+<% end %>
+
 <%= render 'profile' , user: @user %>
 
 
-<%= render 'items/list' , items: @items %>
+<%= render 'rooms/list' , rooms: @rooms %>

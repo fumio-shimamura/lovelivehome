@@ -29,6 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'      # bootstrapを使用する
 gem 'carrierwave'         # ファイルアップロード、保存を行う
+gem 'kaminari'            # ページングを行う
 
 group :development, :test  do
   gem 'pry-rails'         # rails console(もしくは、rails c)でirbの代わりにpryが使われる
@@ -51,7 +52,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  #gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

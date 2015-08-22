@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    #redirect_to new_item_path if logged_in?
+    redirect_to new_room_path if logged_in?
   end
 
   def create

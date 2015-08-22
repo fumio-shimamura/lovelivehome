@@ -1,8 +1,18 @@
-<div class="search">
-  <%= form_tag new_room_path , method: :get do %>
-    <%= text_field_tag :q , params[:q], placeholder: "キーワードを入力", required: true %>
-    <%= f.label :q %>
-    <%= file_field_tag :q , params[:q], placeholder: "画像を選択", required: true %>
-    <%= submit_tag "画像をアップロード", name: nil , class: "btn btn-success", data: { disable_with: "アップロード中..."} %>
-  <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@room) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <br>
+      <%= f.label :image, "部屋の画像を選択する" %>
+      <%= f.file_field :image, class: "btn btn-primary" %>
+      <br>
+      <%= f.label :place, "場所"  %>
+      <%= f.select :place, {"机" => "机", "本棚" => "本棚", "ソファ" => "ソファ", "ベッド" => "ベッド",  "その他" => "その他"}, {}, {class: "form-control"} %>
+      <br>
+      <%= f.label :detail01 %>
+      <%= f.text_field :detail01, class: 'form-control'  %>
+      <br>
+      <%= submit_tag "アップロード", class: "btn btn-primary", data: { disable_with: "アップロード中..."} %>
+    <% end %>
+  </div>
 </div>

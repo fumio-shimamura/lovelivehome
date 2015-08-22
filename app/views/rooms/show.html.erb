@@ -1,6 +1,7 @@
-<% content_for :ogp do %>
-  <meta name="title" content="<%= @room.description %> - Lovelivehome" />
-  <meta name="description" content="<%= @room.description %>にの情報です。" />
+<% content_for :head do %>
+  <title><%= @room.detail01 %> - Lovelivehome</title>
+  <meta name="title" content="<%= @room.detail01 %> - Lovelivehome" />
+  <meta name="description" content="<%= @room.detail01 %>の情報です。" />
 <% end %>
 
 <div class="container">

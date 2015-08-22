@@ -1,19 +1,24 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
+    <%= paginate(@rooms) %><br>
     <% rooms.each do |room| %>
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
             <% if room.image.present? %>
-              <%= image_tag(item.image , alt: room.description) %>
+              <a class="single" href=<%= room.image %> >
+                <%= image_tag(room.image , alt: room.detail01) %>
+              </a>
             <% else %>
-              <%= image_tag("no-image.png" , alt: room.description) %>
+              <%= image_tag("no-image.png" , alt: room.detail01) %>
             <% end %>
           </div>
         </div>
         <div class="detail">
           <p class="title">
-            <%= room.description %>
+            <%= room.place %>
+            <br>
+            <%= room.detail01 %>
           </p>
         </div>
       </div>
