@@ -15,8 +15,14 @@
           </div>
         </div>
         <div class="detail">
+          <div class="user_image">
+            <%= link_to gravatar_for(room.user, size:30), room.user %>
+          </div>
           <p class="title">
             <%= room.place %>
+            <% if current_user == room.user %>
+              <span class="del_link"><%= link_to image_tag("trash.png", alt:'削除ボタン'), room, method: :delete, data: { confirm: "削除しますか?" } %></span>
+            <% end %>
             <br>
             <%= room.detail01 %>
           </p>

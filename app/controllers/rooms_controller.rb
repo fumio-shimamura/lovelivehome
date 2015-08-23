@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :logged_in_user, only: [:create]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def show
     @room = Room.find(params[:id])
