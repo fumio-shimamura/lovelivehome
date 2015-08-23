@@ -9,7 +9,7 @@
       <%= f.label :place, "場所"  %>
       <%= f.select :place, {"机" => "机", "本棚" => "本棚", "ソファ" => "ソファ", "ベッド" => "ベッド",  "その他" => "その他"}, {}, {class: "form-control"} %>
       <br>
-      <%= f.label :detail01 %>
+      <%= f.label :detail01, "説明" %>
       <%= f.text_field :detail01, class: 'form-control'  %>
       <br>
       <%= submit_tag "アップロード", class: "btn btn-primary", data: { disable_with: "アップロード中..."} %>
