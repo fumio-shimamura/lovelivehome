@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-    @rooms = @user.rooms.order("updated_at DESC").page(params[:page]).per(12)
+    @rooms = @user.rooms.order("created_at DESC").page(params[:page]).per(12)
   end
 
   def new
