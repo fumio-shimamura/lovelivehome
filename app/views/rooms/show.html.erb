@@ -10,9 +10,9 @@
       <div class="image">
         <div class="img-wrap">
           <% if @room.image != nil %>
-            <%= image_tag(@room.image , alt: @room.description) %>
+            <%= image_tag(@room.image , alt: @room.detail01 ) %>
           <% else %>
-            <%= image_tag('no-image.png' , alt: @room.description) %>
+            <%= image_tag('no-image.png' , alt: @room.detail01 ) %>
           <% end %>
         </div>
       </div>
